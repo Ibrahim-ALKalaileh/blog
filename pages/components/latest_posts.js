@@ -14,7 +14,7 @@ export default function latest_posts() {
         {Posts()}
         {Posts()}
         {Posts()}
-        
+
       </div>
     </section>
   );
@@ -26,7 +26,7 @@ function Posts() {
       <div className="images">
         <Link href={"/"}>
           <a>
-            <Image src={"/images/img1.jpg"} width={500} height={350} />
+            <Image src={"/images/img1.jpg"} className="rounded-md" width={500} height={350} />
           </a>
         </Link>
       </div>
@@ -45,7 +45,7 @@ function Posts() {
 
         <div className="title">
           <Link href={"/"}>
-            <a className="text-xl font-bold text-gray-800 hover:text-gray-600">
+            <a className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600">
               woow this is my first post
             </a>
           </Link>
