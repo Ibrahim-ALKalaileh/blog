@@ -1,12 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Format from './layout/format'
+import Head from "next/head";
+import Image from "next/image";
+import Format from "./layout/format";
 // components
-import Section1 from './components/section1'
+import Section1 from "./components/section1";
 export default function Home() {
   return (
     <Format>
       <Section1></Section1>
     </Format>
-  )
+  );
 }
+
+
