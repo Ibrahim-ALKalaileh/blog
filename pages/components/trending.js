@@ -1,6 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import Author from "./_child/author";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay,Pagination, Navigation } from "swiper";
+
+
 export default function section1() {
     const bg={
         background:"url('/images/banner.png') no-repeat",
@@ -10,8 +22,28 @@ export default function section1() {
     <section className="py-16" style={bg}>
       <div className="container mx-auto md:px-20">
         <h1 className="font-bold text-4xl pb-12 text-center">Trending</h1>
-
-        {Slide()}
+        <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        autoplay={{
+            delay: 2500,
+            disableOnInteraction: true,
+          }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay,Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>{Slide()}</SwiperSlide>
+        <SwiperSlide>{Slide()}</SwiperSlide>
+        <SwiperSlide>{Slide()}</SwiperSlide>
+        <SwiperSlide>{Slide()}</SwiperSlide>
+        <SwiperSlide>{Slide()}</SwiperSlide>
+      </Swiper>
+        
       </div>
     </section>
   );
@@ -48,7 +80,7 @@ function Slide() {
           </Link>
         </div>
 
-        <p className="text-gray-500 py-3">
+        <p className="text-gray-500 py-3 w-5/6">
           hoooly shit this could be the first description without me knowing how
           to dev website even woow holy fucking shit this is soo cool i cant
           wait to finish this blog

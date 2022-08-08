@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Format from "./layout/format";
 // components
-import Section1 from "./components/section1";
+import Section1 from "./components/trending";
 export default function Home() {
   return (
     <Format>
