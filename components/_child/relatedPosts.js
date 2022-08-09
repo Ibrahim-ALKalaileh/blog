@@ -1,37 +1,21 @@
-import Author from "./_child/author";
-import Image from "next/image";
 import Link from "next/link";
-
-export default function categorizedPostsSec() {
+import Image from "next/image";
+import Author from "./author";
+export default function RelatedPosts() {
   return (
-    <section className="container mx-auto md:px-20 py-16">
-      <div className="grid lg:grid-cols-2">
-        <div className="item">
-          <h1 className="font-bold text-4xl py-12">Bussiness</h1>
-          <div className="flex flex-col gap-6">
-            {/*posts*/}
-            {Posts()}
-            {Posts()}
-            {Posts()}
-            {Posts()}
-          </div>
-        </div>
+    <section className="pt-20">
+      <h1 className="font-bold text-3xl py-10">Related</h1>
 
-        <div className="item">
-          <h1 className="font-bold text-4xl py-12">Travel</h1>
-          <div className="flex flex-col gap-6">
-            {/*posts*/}
-            {Posts()}
-            {Posts()}
-            {Posts()}
-            {Posts()}
-          </div>
-        </div>
+      <div className="flex flex-col gap-10">
+        {Posts()}
+        {Posts()}
+        {Posts()}
+        {Posts()}
+        {Posts()}
       </div>
     </section>
   );
 }
-
 function Posts() {
   return (
     <div className="flex gap-5">
@@ -40,9 +24,9 @@ function Posts() {
           <a>
             <Image
               src={"/images/img1.jpg"}
-              className="rounded-md"
+              className="rounded"
               width={300}
-              height={250}
+              height={200}
             />
           </a>
         </Link>
