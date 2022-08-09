@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import { Autoplay,Pagination, Navigation } from "swiper";
 
 
-export default function section1() {
+export default function trending() {
     const bg={
         background:"url('/images/banner.png') no-repeat",
         backgroundPosition:"right"

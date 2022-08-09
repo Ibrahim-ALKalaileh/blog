@@ -28,7 +28,7 @@ export default function most_popular() {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={false}
         modules={[Autoplay,Pagination, Navigation]}
         className="mySwiper"
       >
@@ -45,7 +45,7 @@ export default function most_popular() {
 
 function Posts() {
     return (
-      <div className="grid">
+      <div className="grid justify-evenly">
         <div className="images">
           <Link href={"/"}>
             <a>
@@ -68,7 +68,7 @@ function Posts() {
   
           <div className="title">
             <Link href={"/"}>
-              <a className="text-xl font-bold text-gray-800 hover:text-gray-600">
+              <a className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600">
                 woow this is my first post
               </a>
             </Link>

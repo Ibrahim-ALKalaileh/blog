@@ -45,7 +45,7 @@ function Posts() {
 
         <div className="title">
           <Link href={"/"}>
-            <a className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600">
+            <a className="text-xl font-bold text-gray-800 hover:text-gray-600">
               woow this is my first post
             </a>
           </Link>
