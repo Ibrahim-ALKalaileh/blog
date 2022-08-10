@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import Author from "./_child/author";
+import fetcher from "../lib/fethcer";
+import LoadingSpinner from "./_child/loadingSpinner";
+import Error from "./_child/error";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,6 +16,12 @@ import "swiper/css/navigation";
 import { Autoplay,Pagination, Navigation } from "swiper";
 
 export default function most_popular() {
+
+  const { data, isLoading, isError } = fetcher("api/popular");
+
+  if (isLoading) return <LoadingSpinner></LoadingSpinner>;
+  if (isError) return <Error></Error>;
+
   return (
     <section className="container mx-auto md:px-20 py-16">
       <h1 className="font-bold text-4xl py-12 text-center">Most Popular</h1>
@@ -32,24 +41,28 @@ export default function most_popular() {
         modules={[Autoplay,Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>{Posts()}</SwiperSlide>
-        <SwiperSlide>{Posts()}</SwiperSlide>
-        <SwiperSlide>{Posts()}</SwiperSlide>
-        <SwiperSlide>{Posts()}</SwiperSlide>
-        <SwiperSlide>{Posts()}</SwiperSlide>
+        {
+          data.map((value) => (
+            <SwiperSlide key={value.id}>
+              <Posts data={value}></Posts>
+            </SwiperSlide>
+          ))
+          }
+        
       </Swiper>
 
     </section>
   );
 }
 
-function Posts() {
+function Posts({data}) {
+  const {title,description,category,img,published,subtitle,author}=data;
     return (
       <div className="grid justify-evenly">
         <div className="images">
           <Link href={"/"}>
             <a>
-              <Image src={"/images/img1.jpg"} width={600} height={400} />
+              <Image src={img} width={600} height={400} />
             </a>
           </Link>
         </div>
@@ -58,26 +71,24 @@ function Posts() {
           <div className="cat">
             <Link href={"/"}>
               <a className="text-orange-600 hover:text-orange-800">
-                Bussiness,Travel
+                {category}
               </a>
             </Link>
             <Link href={"/"}>
-              <a className="text-gray-800 hover:text-gray-600">- August 8,2022</a>
+              <a className="text-gray-800 hover:text-gray-600">- {published}</a>
             </Link>
           </div>
   
           <div className="title">
             <Link href={"/"}>
               <a className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600">
-                woow this is my first post
+                {title}
               </a>
             </Link>
           </div>
   
           <p className="text-gray-500 py-3 w-5/6">
-            hoooly shit this could be the first description without me knowing how
-            to dev website even woow holy fucking shit this is soo cool i cant
-            wait to finish this blog
+            {description}
           </p>
   
           <Author> </Author>
