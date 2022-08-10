@@ -56,11 +56,11 @@ export default function most_popular() {
 }
 
 function Posts({data}) {
-  const {title,description,category,img,published,subtitle,author}=data;
+  const {id,title,description,category,img,published,subtitle,author}=data;
     return (
       <div className="grid justify-evenly">
         <div className="images">
-          <Link href={"/"}>
+          <Link href={`/posts/${id}`}>
             <a>
               <Image src={img} width={600} height={400} />
             </a>
@@ -69,18 +69,18 @@ function Posts({data}) {
   
         <div className="info flex justify-center flex-col py-4">
           <div className="cat">
-            <Link href={"/"}>
+            <Link href={`/posts/${id}`}>
               <a className="text-orange-600 hover:text-orange-800">
                 {category}
               </a>
             </Link>
-            <Link href={"/"}>
+            <Link href={`/posts/${id}`}>
               <a className="text-gray-800 hover:text-gray-600">- {published}</a>
             </Link>
           </div>
   
           <div className="title">
-            <Link href={"/"}>
+            <Link href={`/posts/${id}`}>
               <a className="text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600">
                 {title}
               </a>

@@ -59,11 +59,11 @@ export default function trending() {
 }
 
 function Slide({data}) {
-  const {title,description,category,img,published,author}=data;
+  const {id,title,description,category,img,published,author}=data;
   return (
     <div className="grid md:grid-cols-2">
       <div className="image">
-        <Link href={"/"}>
+        <Link href={`/posts/${id}`}>
           <a>
             <Image src={img || '/'} width={600} height={600} />
           </a>
@@ -72,16 +72,16 @@ function Slide({data}) {
 
       <div className="info flex justify-center flex-col">
         <div className="cat">
-          <Link href={"/"}>
+          <Link href={`/posts/${id}`}>
             <a className="text-orange-600 hover:text-orange-800">{category||'unknown'}</a>
           </Link>
-          <Link href={"/"}>
+          <Link href={`/posts/${id}`}>
             <a className="text-gray-800 hover:text-gray-600">- {published||'unknown'}</a>
           </Link>
         </div>
 
         <div className="title">
-          <Link href={"/"}>
+          <Link href={`/posts/${id}`}>
             <a className="text-3xl md:text-6xl font-bold text-gray-800 hover:text-gray-600">
               {title}
             </a>
