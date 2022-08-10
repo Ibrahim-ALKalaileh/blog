@@ -3,14 +3,16 @@ import Image from "next/image";
 import Author from "./_child/author";
 import getPosts from "../lib/helper";
 import fetcher from "../lib/fethcer";
+import LoadingSpinner from "./_child/loadingSpinner";
+import Error from "./_child/error";
 export default function latest_posts() {
 
   //getPosts(2).then(res=>console.log(res))
 
   const {data,isLoading,isError}=fetcher('api/posts')
   
-  if(isLoading) return <div>Is Loading..</div>
-  if(isError) return <div>Error</div>
+  if(isLoading) return <LoadingSpinner></LoadingSpinner>
+  if(isError) return <Error></Error>
   return (
     <section className="container mx-auto md:px-20 py-10">
       <h1 className="font-bold text-4xl py-12 text-center">Latest Posts</h1>
