@@ -36,7 +36,8 @@ export default function trending() {
           loop={true}
           autoplay={{
             delay: 2500,
-            disableOnInteraction: true,
+            disableOnInteraction: false,
+            pauseOnMouseEnter:true
           }}
           pagination={{
             clickable: true,

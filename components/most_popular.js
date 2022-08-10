@@ -27,12 +27,17 @@ export default function most_popular() {
       <h1 className="font-bold text-4xl py-12 text-center">Most Popular</h1>
       {/*Swiper*/}
       <Swiper
-        slidesPerView={2}
-        spaceBetween={30}
+        breakpoints={{
+          640:{
+            slidesPerView:2,
+            spaceBetween:30
+          }
+        }}
         loop={true}
         autoplay={{
             delay: 2500,
-            disableOnInteraction: true,
+            disableOnInteraction: false,
+            pauseOnMouseEnter:true
           }}
         pagination={{
           clickable: true,
