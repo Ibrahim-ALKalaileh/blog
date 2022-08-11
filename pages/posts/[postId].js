@@ -25,7 +25,7 @@ export default function Page({fallback}) {
 function Article({ title, img, description, subtile }) {
   return (
     <Format>
-      <section className="max-w-md mx-auto py-16 md:max-w-2xl">
+      <section className="max-w-md mx-auto py-16 md:max-w-4xl">
         <div className="flex justify-center">
           <Author></Author>
         </div>
