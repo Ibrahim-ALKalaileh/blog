@@ -67,7 +67,7 @@ function Posts({data}) {
         <div className="images">
           <Link href={`/posts/${id}`}>
             <a>
-              <Image src={img} width={600} height={400} />
+              <Image src={img} width={600} height={400} className="rounded-md"/>
             </a>
           </Link>
         </div>

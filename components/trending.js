@@ -66,7 +66,7 @@ function Slide({data}) {
       <div className="image">
         <Link href={`/posts/${id}`}>
           <a>
-            <Image src={img || '/'} width={600} height={600} />
+            <Image src={img || '/'} width={600} height={600} className="rounded-md" />
           </a>
         </Link>
       </div>

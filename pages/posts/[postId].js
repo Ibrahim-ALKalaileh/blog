@@ -25,7 +25,7 @@ export default function Page({fallback}) {
 function Article({ title, img, description, subtile }) {
   return (
     <Format>
-      <section className="container mx-auto md:px-2 py-16 w-1/2">
+      <section className="max-w-md mx-auto py-16 md:max-w-2xl">
         <div className="flex justify-center">
           <Author></Author>
         </div>
@@ -35,8 +35,8 @@ function Article({ title, img, description, subtile }) {
 
           <p className="text-gray-500 text-xl text-center">{subtile}</p>
 
-          <div className="py-10">
-            <Image src={img} width={900} height={600} />
+          <div className="py-10 ">
+            <Image src={img} width={900} height={600} className="rounded-md"/>
           </div>
 
           <div className="content tect-gray-600 text-lg flex flex-col gap-4">

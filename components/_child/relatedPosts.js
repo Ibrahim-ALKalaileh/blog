@@ -3,8 +3,7 @@ import Image from "next/image";
 import Author from "./author";
 import LoadingSpinner from "./loadingSpinner";
 import Error from "./error";
-import fetcher
- from "../../lib/fethcer";
+import fetcher from "../../lib/fethcer";
 export default function RelatedPosts() {
 
   const {data,isLoading,isError}=fetcher('api/posts')
@@ -14,7 +13,7 @@ export default function RelatedPosts() {
 
   return (
     <section className="pt-20">
-      <h1 className="font-bold text-3xl py-10">Related</h1>
+      <h1 className="font-bold text-3xl py-10">Related Posts</h1>
 
       <div className="flex flex-col gap-10">
         {data.map((value)=>(

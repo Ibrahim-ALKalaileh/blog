@@ -13,6 +13,7 @@ export default function latest_posts() {
   
   if(isLoading) return <LoadingSpinner></LoadingSpinner>
   if(isError) return <Error></Error>
+
   return (
     <section className="container mx-auto md:px-20 py-10">
       <h1 className="font-bold text-4xl py-12 text-center">Latest Posts</h1>
@@ -35,7 +36,7 @@ function Posts({data}) {
   return (
     <div className="item">
       <div className="images">
-        <Link href={"/"}>
+        <Link href={`/posts/${id}`}>
           <a>
             <Image src={img || '/'} className="rounded-md" width={500} height={350} />
           </a>
